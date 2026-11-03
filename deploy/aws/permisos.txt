@@ -1,0 +1,25 @@
+verificar-permisos.sh · EP3 DSY1107
+Inicio: 2026-11-03T03:38:43Z · región us-east-1
+OK      0 credenciales del Learner Lab (arn:aws:sts::639441172245:assumed-role/voclabs/user3218811=osca.astudillo@duocuc.cl)
+FALLA   0 Session Manager plugin :: no está en el PATH; la prueba 7 no se puede hacer
+OK      1 crear VPC (vpc-04d5a8db46d716aa4)
+OK      1 Internet Gateway asociado (igw-06abfe653c8d3e56b)
+OK      1 subred pública con ruta 0.0.0.0/0 al Internet Gateway
+OK      2 Security Group con el 80 abierto y un puerto solo para la IP 190.20.151.134/32
+OK      3 EC2 t3.nano con LabInstanceProfile e IP privada fija 10.99.1.10 (i-0d59ce6c66a1adbc0)
+OK      4 Elastic IP asignada y asociada
+        IP pública de la instancia: 54.80.126.150
+OK      5 desactivar source/dest check (NAT instance)
+OK      6 la instancia aparece en Session Manager (Online)
+OK      6 comando ejecutado por Session Manager (responde 10.99.1.10 )
+OK      8 54-80-126-150.sslip.io resuelve a 54.80.126.150
+        9 desde esta IP el 8080 responde, porque la regla 2 lo permite: correcto
+OK      9 el puerto 22 no responde: no hay regla que lo abra
+
+Resumen: 12 OK y 1 FALLA
+
+Limpieza de los recursos de prueba
+        instancia i-0d59ce6c66a1adbc0 terminada
+        Elastic IP liberada
+        VPC de prueba borrada
+Fin: 2026-11-03T03:41:10Z
